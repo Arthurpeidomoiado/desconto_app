@@ -1,0 +1,11 @@
+from src.models.pedido import Pedido
+class PedidoService:
+    def __init__(self):
+        self.pedidos = []
+    def adicionar_pedidos(self, pedido : Pedido):
+        self.pedidos.append(pedido)
+    def processar_pedidos(self):
+        for pedido in self.pedidos:
+            print(f'Cliente: {pedido.cliente}')
+            print(f'Valor Final: {pedido.valor_final(pedido.valor_original)}')
+    
