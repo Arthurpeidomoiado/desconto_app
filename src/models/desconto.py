@@ -13,3 +13,6 @@ class DescontoNormal(Desconto):
 class DescontoVIP(Desconto):
     def calcular(self, valor):
         return valor * 0.2
+class DescontoPremium(Desconto):
+    def calcular(self,valor):
+        return valor * 0.3
