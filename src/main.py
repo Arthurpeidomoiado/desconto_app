@@ -2,8 +2,11 @@ from src.models.desconto import DescontoVIP,DescontoNormal,DescontoPremium
 from src.models.pedido import Pedido
 from src.services.PedidoService import PedidoService
 from src.repositories.pedidos_repository import PedidoRepository
+from src.database.connection import DatabaseConnection
 if __name__ == '__main__':
-    service = PedidoService();
+    database = DatabaseConnection()
+    repo = PedidoRepository(database)
+    service = PedidoService(repo);
     pedido1 = Pedido('Leonardo',DescontoNormal())
     pedido1.valor_original = 100;
 
